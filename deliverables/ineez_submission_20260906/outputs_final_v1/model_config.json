@@ -1,0 +1,37 @@
+{
+  "version": "final_v1",
+  "models": {
+    "1": "elastic_net",
+    "2": "ridge",
+    "3": "ridge"
+  },
+  "ridge_alpha": 10.0,
+  "elastic_net_alpha": 0.01,
+  "elastic_net_l1_ratio": 0.2,
+  "h1_reaction_lags": [
+    0,
+    1,
+    3,
+    6
+  ],
+  "selection_window": 36,
+  "selection_min_origins": 24,
+  "first_inner_origin": 72,
+  "first_validation_origin": 120,
+  "release_lags": {
+    "production": 2,
+    "storage": 2,
+    "consumption": 2,
+    "market": 0
+  },
+  "raw_inputs": {
+    "production": "Total_Natural_Gas_Marketed_Production_USA",
+    "storage": "Total_Natural_Gas_Underground_Storage_Volume_USA",
+    "consumption": "Natural_Gas_Total_Consumption_USA",
+    "market": "BCOMNG_INDX"
+  },
+  "price_target": "Natural_Gas_US_Henry_Hub_Gas",
+  "target": "log(P[t+h]/P[t]); prediction=max(.01,P[t]*exp(model_output)); no blend",
+  "deployment": "monthly expanding refit; observed current test price usable only at/after its own origin",
+  "limitations": "retrospective inspected validation, not untouched holdout; historical release calendar and vintage incompletely verified; monthly forecast after releases at month end"
+}

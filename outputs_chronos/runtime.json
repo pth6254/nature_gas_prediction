@@ -1,0 +1,5 @@
+{
+  "inference_seconds_including_repeat": 0.36629720000200905,
+  "peak_allocated_bytes": 227643392,
+  "repeat_first_batch_max_atol": 1e-06
+}

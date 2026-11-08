@@ -1,0 +1,4 @@
+horizon,experiment,year,role,mape_pct,mae,direction_accuracy_pct,n_origins,turning_precision_pct,turning_recall_pct,turning_f1_pct,actual_turning_points,predicted_turning_points,family
+1,ridge__D_market,all,fixed_candidate_diagnostic,6.394607157113033,0.19466149786985007,65.06024096385542,83,68.88888888888889,67.3913043478261,68.13186813186812,46,45,ridge
+2,ridge__D_market,all,fixed_candidate_diagnostic,9.313073335960356,0.2770847511057208,60.97560975609756,82,57.89473684210527,57.89473684210527,57.89473684210527,38,38,ridge
+3,ridge__D_market,all,fixed_candidate_diagnostic,12.077829345035598,0.3555631857270004,56.79012345679012,81,55.81395348837209,60.0,57.831325301204814,40,43,ridge

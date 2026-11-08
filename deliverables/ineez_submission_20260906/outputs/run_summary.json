@@ -1,0 +1,45 @@
+{
+  "availability_mode": "conservative",
+  "train_rows": 204,
+  "test_rows": 48,
+  "first_validation_origin": "2013-09-30",
+  "feature_groups": {
+    "1": "E3_energy",
+    "2": "E3_energy",
+    "3": "E2_fundamentals"
+  },
+  "models": {
+    "1": "elastic_net_log_return",
+    "2": "ridge_log_return",
+    "3": "ridge_log_return"
+  },
+  "selection": [
+    {
+      "horizon": 1,
+      "feature_group": "E3_energy",
+      "model": "elastic_net_log_return",
+      "validation_mape_pct": 6.827213246451453,
+      "validation_mae": 0.20519716190943446,
+      "direction_accuracy_pct": 66.26506024096386,
+      "turning_f1_pct": 67.44186046511628
+    },
+    {
+      "horizon": 2,
+      "feature_group": "E3_energy",
+      "model": "ridge_log_return",
+      "validation_mape_pct": 9.461256290608087,
+      "validation_mae": 0.2801975088291257,
+      "direction_accuracy_pct": 58.536585365853654,
+      "turning_f1_pct": 56.41025641025641
+    },
+    {
+      "horizon": 3,
+      "feature_group": "E2_fundamentals",
+      "model": "ridge_log_return",
+      "validation_mape_pct": 13.28461777758224,
+      "validation_mae": 0.40543826896990903,
+      "direction_accuracy_pct": 61.72839506172839,
+      "turning_f1_pct": 60.75949367088608
+    }
+  ]
+}

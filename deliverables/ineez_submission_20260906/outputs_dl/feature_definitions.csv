@@ -1,0 +1,5 @@
+﻿feature,raw_columns,formula,release_lag_months,implementation
+production_level,Total_Natural_Gas_Marketed_Production_USA,x; then shift(release_lag).ffill(),2,src/hypotheses.py
+consumption_z,Natural_Gas_Total_Consumption_USA,"(x - expanding_mean(x)) / expanding_std(x), min_n=12; then shift(release_lag).ffill()",2,src/hypotheses.py
+storage_seasonal_z,Total_Natural_Gas_Underground_Storage_Volume_USA,"(x - prior_same_month_mean) / prior_same_month_std, min_n=3; then shift(release_lag).ffill()",1,src/hypotheses.py
+BCOMNG_INDX_return,BCOMNG_INDX,x / x.shift(1) - 1; ffill,0,src/hypotheses.py

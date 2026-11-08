@@ -1,0 +1,38 @@
+feature,raw_columns,formula,release_lag_months,implementation,extra_lag_months
+price_now,Natural_Gas_US_Henry_Hub_Gas,price_now,0,src/features.py:make_feature_matrix,
+price_lag_1,Natural_Gas_US_Henry_Hub_Gas,price_lag_1,0,src/features.py:make_feature_matrix,
+price_lag_2,Natural_Gas_US_Henry_Hub_Gas,price_lag_2,0,src/features.py:make_feature_matrix,
+price_lag_3,Natural_Gas_US_Henry_Hub_Gas,price_lag_3,0,src/features.py:make_feature_matrix,
+price_lag_6,Natural_Gas_US_Henry_Hub_Gas,price_lag_6,0,src/features.py:make_feature_matrix,
+price_lag_12,Natural_Gas_US_Henry_Hub_Gas,price_lag_12,0,src/features.py:make_feature_matrix,
+price_log_return_1,Natural_Gas_US_Henry_Hub_Gas,price_log_return_1,0,src/features.py:make_feature_matrix,
+price_log_return_3,Natural_Gas_US_Henry_Hub_Gas,price_log_return_3,0,src/features.py:make_feature_matrix,
+price_log_return_6,Natural_Gas_US_Henry_Hub_Gas,price_log_return_6,0,src/features.py:make_feature_matrix,
+price_log_return_12,Natural_Gas_US_Henry_Hub_Gas,price_log_return_12,0,src/features.py:make_feature_matrix,
+price_roll_mean_3,Natural_Gas_US_Henry_Hub_Gas,price_roll_mean_3,0,src/features.py:make_feature_matrix,
+price_roll_std_3,Natural_Gas_US_Henry_Hub_Gas,price_roll_std_3,0,src/features.py:make_feature_matrix,
+price_roll_mean_6,Natural_Gas_US_Henry_Hub_Gas,price_roll_mean_6,0,src/features.py:make_feature_matrix,
+price_roll_std_6,Natural_Gas_US_Henry_Hub_Gas,price_roll_std_6,0,src/features.py:make_feature_matrix,
+price_roll_mean_12,Natural_Gas_US_Henry_Hub_Gas,price_roll_mean_12,0,src/features.py:make_feature_matrix,
+price_roll_std_12,Natural_Gas_US_Henry_Hub_Gas,price_roll_std_12,0,src/features.py:make_feature_matrix,
+month_sin,date,month_sin,0,src/features.py:make_feature_matrix,
+month_cos,date,month_cos,0,src/features.py:make_feature_matrix,
+production_level,Total_Natural_Gas_Marketed_Production_USA,x; then shift(release_lag).ffill(),2,src/hypotheses.py,
+production_z,Total_Natural_Gas_Marketed_Production_USA,"(x - expanding_mean(x)) / expanding_std(x), min_n=12; then shift(release_lag).ffill()",2,src/hypotheses.py,
+consumption_level,Natural_Gas_Total_Consumption_USA,x; then shift(release_lag).ffill(),2,src/hypotheses.py,
+consumption_z,Natural_Gas_Total_Consumption_USA,"(x - expanding_mean(x)) / expanding_std(x), min_n=12; then shift(release_lag).ffill()",2,src/hypotheses.py,
+storage_level,Total_Natural_Gas_Underground_Storage_Volume_USA,x; then shift(release_lag).ffill(),1,src/hypotheses.py,
+storage_z,Total_Natural_Gas_Underground_Storage_Volume_USA,"(x - expanding_mean(x)) / expanding_std(x), min_n=12; then shift(release_lag).ffill()",1,src/hypotheses.py,
+storage_seasonal_z,Total_Natural_Gas_Underground_Storage_Volume_USA,"(x - prior_same_month_mean) / prior_same_month_std, min_n=3; then shift(release_lag).ffill()",1,src/hypotheses.py,
+BCOMNG_INDX_return,BCOMNG_INDX,x / x.shift(1) - 1; ffill,0,src/hypotheses.py,
+balance_equal,Total_Natural_Gas_Marketed_Production_USA;Total_Natural_Gas_Underground_Storage_Volume_USA;Natural_Gas_Total_Consumption_USA,production_z + storage_z - consumption_z; no imports or rigs,component-specific,src/hypotheses.py,
+BCOMNG_level,BCOMNG_INDX,x.ffill(); release lag 0,0,,
+production_level_extra_lag1,Total_Natural_Gas_Marketed_Production_USA,production_level.shift(1) AFTER causal release alignment,2,,1.0
+storage_seasonal_z_extra_lag1,Total_Natural_Gas_Underground_Storage_Volume_USA,storage_seasonal_z.shift(1) AFTER causal release alignment,1,,1.0
+consumption_z_extra_lag1,Natural_Gas_Total_Consumption_USA,consumption_z.shift(1) AFTER causal release alignment,2,,1.0
+production_level_extra_lag3,Total_Natural_Gas_Marketed_Production_USA,production_level.shift(3) AFTER causal release alignment,2,,3.0
+storage_seasonal_z_extra_lag3,Total_Natural_Gas_Underground_Storage_Volume_USA,storage_seasonal_z.shift(3) AFTER causal release alignment,1,,3.0
+consumption_z_extra_lag3,Natural_Gas_Total_Consumption_USA,consumption_z.shift(3) AFTER causal release alignment,2,,3.0
+production_level_extra_lag6,Total_Natural_Gas_Marketed_Production_USA,production_level.shift(6) AFTER causal release alignment,2,,6.0
+storage_seasonal_z_extra_lag6,Total_Natural_Gas_Underground_Storage_Volume_USA,storage_seasonal_z.shift(6) AFTER causal release alignment,1,,6.0
+consumption_z_extra_lag6,Natural_Gas_Total_Consumption_USA,consumption_z.shift(6) AFTER causal release alignment,2,,6.0

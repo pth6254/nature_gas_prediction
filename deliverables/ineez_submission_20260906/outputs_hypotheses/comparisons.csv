@@ -1,0 +1,100 @@
+﻿horizon,experiment,parent,question,mape_pct,delta_mape_pp,delta_turning_f1_pp,years_better_than_parent,n_years,n_origins,status
+1,history,naive,가격 이력만으로 Naive보다 개선되는가?,7.84788812421929,0.18161788870556173,51.764705882352935,3,8,83,exploratory; not automatically adopted
+1,core_z,history,생산·재고·소비를 개별 입력하면 추가 정보가 있는가?,7.524316502102295,-0.3235716221169955,4.705882352941181,7,8,83,exploratory; not automatically adopted
+1,production_level,core_z,다른 입력을 고정하고 production를 level로 교체하면 개선되는가?,7.384650746921857,-0.13966575518043722,3.0532212885154095,4,8,83,exploratory; not automatically adopted
+1,production_change,core_z,다른 입력을 고정하고 production를 change로 교체하면 개선되는가?,7.675537483653587,0.15122098155129216,-4.089635854341729,4,8,83,exploratory; not automatically adopted
+1,production_yoy,core_z,다른 입력을 고정하고 production를 yoy로 교체하면 개선되는가?,7.692785637262023,0.16846913515972872,-1.9251336898395763,3,8,83,exploratory; not automatically adopted
+1,production_seasonal_z,core_z,다른 입력을 고정하고 production를 seasonal_z로 교체하면 개선되는가?,7.792669950057729,0.2683534479554339,-0.6566347469220233,1,8,83,exploratory; not automatically adopted
+1,without_production,core_z,production를 제거하고 재학습하면 성능이 악화되는가?,7.845675469099344,0.3213589669970496,-4.618736383442268,2,8,83,exploratory; not automatically adopted
+1,storage_level,core_z,다른 입력을 고정하고 storage를 level로 교체하면 개선되는가?,7.609329840686156,0.0850133385838614,-1.7086834733893497,1,8,83,exploratory; not automatically adopted
+1,storage_change,core_z,다른 입력을 고정하고 storage를 change로 교체하면 개선되는가?,7.741121642516615,0.21680514041432009,-2.352941176470587,1,8,83,exploratory; not automatically adopted
+1,storage_yoy,core_z,다른 입력을 고정하고 storage를 yoy로 교체하면 개선되는가?,7.718751215113053,0.1944347130107582,-4.78519497686716,3,8,83,exploratory; not automatically adopted
+1,storage_seasonal_z,core_z,다른 입력을 고정하고 storage를 seasonal_z로 교체하면 개선되는가?,7.262779403737054,-0.26153709836524097,-0.37302725968436334,7,8,83,exploratory; not automatically adopted
+1,without_storage,core_z,storage를 제거하고 재학습하면 성능이 악화되는가?,7.5981505831076195,0.07383408100532485,-3.458540042523026,3,8,83,exploratory; not automatically adopted
+1,consumption_level,core_z,다른 입력을 고정하고 consumption를 level로 교체하면 개선되는가?,7.639772680126707,0.1154561780244121,0.0,1,8,83,exploratory; not automatically adopted
+1,consumption_change,core_z,다른 입력을 고정하고 consumption를 change로 교체하면 개선되는가?,7.731477263748464,0.20716076164616926,-5.8958755916159475,4,8,83,exploratory; not automatically adopted
+1,consumption_yoy,core_z,다른 입력을 고정하고 consumption를 yoy로 교체하면 개선되는가?,7.674761373576877,0.15044487147458252,1.9563780568407054,3,8,83,exploratory; not automatically adopted
+1,consumption_seasonal_z,core_z,다른 입력을 고정하고 consumption를 seasonal_z로 교체하면 개선되는가?,7.692815665841966,0.16849916373967133,-5.307797537619692,3,8,83,exploratory; not automatically adopted
+1,without_consumption,core_z,consumption를 제거하고 재학습하면 성능이 악화되는가?,7.617476274428077,0.09315977232578199,1.0006761325219742,4,8,83,exploratory; not automatically adopted
+1,equal_index,core_z,같은 세 Z특징을 +생산+재고-소비 지수로 압축하면 어떠한가?,7.890601100289456,0.3662845981871614,-5.8681785967399165,1,8,83,exploratory; not automatically adopted
+1,signed_core,core_z,"생산·재고 음수, 소비 양수 계수 제약이 예측에 도움이 되는가?",7.598425392110113,0.0741088900078184,-3.458540042523026,3,8,83,exploratory; not automatically adopted
+1,plus_imports,core_z,총수입이 세 수급 변수에 추가 정보를 제공하는가?,7.5147912044553,-0.009525297646995057,-1.7086834733893497,4,8,83,exploratory; not automatically adopted
+1,plus_canada,plus_imports,총수입에 캐나다 수입을 더하면 중복 이상의 가치가 있는가?,7.479519298039749,-0.03527190641555045,8.76750700280111,5,8,83,exploratory; not automatically adopted
+1,plus_rigs_0,core_z,rig count의 추가 시차 0개월이 도움이 되는가?,7.704392713378759,0.18007621127646445,0.34759358288769704,3,8,83,exploratory; not automatically adopted
+1,plus_rigs_3,core_z,rig count의 추가 시차 3개월이 도움이 되는가?,7.631245216643036,0.10692871454074115,1.9563780568407054,3,8,83,exploratory; not automatically adopted
+1,plus_rigs_6,core_z,rig count의 추가 시차 6개월이 도움이 되는가?,7.556896465340683,0.03257996323838874,3.2995267072346124,2,8,83,exploratory; not automatically adopted
+1,plus_BCOMNG_INDX,core_z,BCOMNG_INDX 수익률에 수급 이상의 추가 정보가 있는가?,6.648707226339718,-0.8756092757625771,10.971272229822162,7,8,83,exploratory; not automatically adopted
+1,plus_WTI_Crude_Oil,core_z,WTI_Crude_Oil 수익률에 수급 이상의 추가 정보가 있는가?,7.567772795533524,0.043456293431229476,-4.089635854341729,4,8,83,exploratory; not automatically adopted
+1,plus_Brent_Crude_Oil,core_z,Brent_Crude_Oil 수익률에 수급 이상의 추가 정보가 있는가?,7.572906264916209,0.04858976281391403,-3.5970250169033093,3,8,83,exploratory; not automatically adopted
+1,plus_BCOMCL_INDX,core_z,BCOMCL_INDX 수익률에 수급 이상의 추가 정보가 있는가?,7.518117883559121,-0.006198618543173495,-2.9822161422708646,4,8,83,exploratory; not automatically adopted
+1,plus_DXY_INDX,core_z,DXY_INDX 수익률에 수급 이상의 추가 정보가 있는가?,7.544630497773838,0.02031399567154324,-1.0489014883061643,2,8,83,exploratory; not automatically adopted
+1,plus_energy,core_z,시장 수익률을 함께 추가하면 개선되는가?,6.93603746292374,-0.5882790391785546,11.711229946524071,6,8,83,exploratory; not automatically adopted
+1,plus_weather,core_z,계절 대비 기온이 소비 이외의 정보를 제공하는가?,7.597308308592582,0.07299180649028703,0.0,3,8,83,exploratory; not automatically adopted
+1,seasonal_core,core_z,세 요소를 모두 계절편차로 표현하면 어떠한가?,7.428198965197728,-0.09611753690456659,-2.352941176470587,4,8,83,exploratory; not automatically adopted
+1,plus_interaction,seasonal_core,높은 소비와 낮은 재고의 결합 효과가 있는가?,7.832784072766806,0.40458510756907806,-4.734931009440814,5,8,83,exploratory; not automatically adopted
+2,history,naive,가격 이력만으로 Naive보다 개선되는가?,11.249551241651211,0.7691042305786517,43.0379746835443,3,8,82,exploratory; not automatically adopted
+2,core_z,history,생산·재고·소비를 개별 입력하면 추가 정보가 있는가?,10.68620555087235,-0.5633456907788617,7.6286919831223585,5,8,82,exploratory; not automatically adopted
+2,production_level,core_z,다른 입력을 고정하고 production를 level로 교체하면 개선되는가?,9.811797436172055,-0.8744081147002944,5.333333333333336,5,8,82,exploratory; not automatically adopted
+2,production_change,core_z,다른 입력을 고정하고 production를 change로 교체하면 개선되는가?,11.003133118056786,0.31692756718443604,0.0,3,8,82,exploratory; not automatically adopted
+2,production_yoy,core_z,다른 입력을 고정하고 production를 yoy로 교체하면 개선되는가?,10.718239671267392,0.03203412039504272,-6.5108225108225,4,8,82,exploratory; not automatically adopted
+2,production_seasonal_z,core_z,다른 입력을 고정하고 production를 seasonal_z로 교체하면 개선되는가?,11.242955168968622,0.5567496180962728,-1.9487179487179418,1,8,82,exploratory; not automatically adopted
+2,without_production,core_z,production를 제거하고 재학습하면 성능이 악화되는가?,11.198363924034933,0.512158373162583,-10.126126126126117,3,8,82,exploratory; not automatically adopted
+2,storage_level,core_z,다른 입력을 고정하고 storage를 level로 교체하면 개선되는가?,11.125869618582866,0.4396640677105168,-2.6666666666666643,1,8,82,exploratory; not automatically adopted
+2,storage_change,core_z,다른 입력을 고정하고 storage를 change로 교체하면 개선되는가?,11.021735128538728,0.33552957766637803,-3.298245614035082,2,8,82,exploratory; not automatically adopted
+2,storage_yoy,core_z,다른 입력을 고정하고 storage를 yoy로 교체하면 개선되는가?,11.165824695551624,0.47961914467927436,5.430894308943095,3,8,82,exploratory; not automatically adopted
+2,storage_seasonal_z,core_z,다른 입력을 고정하고 storage를 seasonal_z로 교체하면 개선되는가?,10.220195591215395,-0.46600995965695446,5.743589743589752,6,8,82,exploratory; not automatically adopted
+2,without_storage,core_z,storage를 제거하고 재학습하면 성능이 악화되는가?,11.036765188608184,0.35055963773583443,-5.9298245614035,1,8,82,exploratory; not automatically adopted
+2,consumption_level,core_z,다른 입력을 고정하고 consumption를 level로 교체하면 개선되는가?,11.520015195819777,0.8338096449474275,-2.6666666666666643,2,8,82,exploratory; not automatically adopted
+2,consumption_change,core_z,다른 입력을 고정하고 consumption를 change로 교체하면 개선되는가?,10.822408201983858,0.13620265111150864,0.5528455284553075,3,8,82,exploratory; not automatically adopted
+2,consumption_yoy,core_z,다른 입력을 고정하고 consumption를 yoy로 교체하면 개선되는가?,11.26394924926161,0.577743698389261,-9.20325203252031,2,8,82,exploratory; not automatically adopted
+2,consumption_seasonal_z,core_z,다른 입력을 고정하고 consumption를 seasonal_z로 교체하면 개선되는가?,11.181858184480426,0.495652633608076,-6.222222222222214,2,8,82,exploratory; not automatically adopted
+2,without_consumption,core_z,consumption를 제거하고 재학습하면 성능이 악화되는가?,11.08286676297509,0.39666121210274063,-8.16666666666665,4,8,82,exploratory; not automatically adopted
+2,equal_index,core_z,같은 세 Z특징을 +생산+재고-소비 지수로 압축하면 어떠한가?,11.53009294004805,0.8438873891757002,-7.6286919831223585,2,8,82,exploratory; not automatically adopted
+2,signed_core,core_z,"생산·재고 음수, 소비 양수 계수 제약이 예측에 도움이 되는가?",11.036803808897654,0.350598258025304,-5.9298245614035,1,8,82,exploratory; not automatically adopted
+2,plus_imports,core_z,총수입이 세 수급 변수에 추가 정보를 제공하는가?,10.803357420613475,0.11715186974112513,-2.6666666666666643,1,8,82,exploratory; not automatically adopted
+2,plus_canada,plus_imports,총수입에 캐나다 수입을 더하면 중복 이상의 가치가 있는가?,10.45545453253604,-0.3479028880774351,12.759493670886087,5,8,82,exploratory; not automatically adopted
+2,plus_rigs_0,core_z,rig count의 추가 시차 0개월이 도움이 되는가?,11.484292579012182,0.7980870281398325,4.755020080321309,2,8,82,exploratory; not automatically adopted
+2,plus_rigs_3,core_z,rig count의 추가 시차 3개월이 도움이 되는가?,11.096699891988186,0.41049434111583594,-0.6666666666666572,2,8,82,exploratory; not automatically adopted
+2,plus_rigs_6,core_z,rig count의 추가 시차 6개월이 도움이 되는가?,10.842330692030638,0.15612514115828802,0.0,1,8,82,exploratory; not automatically adopted
+2,plus_BCOMNG_INDX,core_z,BCOMNG_INDX 수익률에 수급 이상의 추가 정보가 있는가?,10.493906111081836,-0.19229943979051356,6.833333333333336,6,8,82,exploratory; not automatically adopted
+2,plus_WTI_Crude_Oil,core_z,WTI_Crude_Oil 수익률에 수급 이상의 추가 정보가 있는가?,10.810810450408379,0.12460489953602938,-4.091324200913235,5,8,82,exploratory; not automatically adopted
+2,plus_Brent_Crude_Oil,core_z,Brent_Crude_Oil 수익률에 수급 이상의 추가 정보가 있는가?,10.857412390929252,0.171206840056902,-3.4444444444444358,5,8,82,exploratory; not automatically adopted
+2,plus_BCOMCL_INDX,core_z,BCOMCL_INDX 수익률에 수급 이상의 추가 정보가 있는가?,10.69389729403229,0.007691743159940145,-0.6666666666666572,5,8,82,exploratory; not automatically adopted
+2,plus_DXY_INDX,core_z,DXY_INDX 수익률에 수급 이상의 추가 정보가 있는가?,10.654910293042178,-0.03129525783017151,0.0,4,8,82,exploratory; not automatically adopted
+2,plus_energy,core_z,시장 수익률을 함께 추가하면 개선되는가?,10.576423657672144,-0.10978189320020526,3.8787878787878967,4,8,82,exploratory; not automatically adopted
+2,plus_weather,core_z,계절 대비 기온이 소비 이외의 정보를 제공하는가?,10.998512256572827,0.31230670570047714,0.0,2,8,82,exploratory; not automatically adopted
+2,seasonal_core,core_z,세 요소를 모두 계절편차로 표현하면 어떠한가?,10.573571148749332,-0.11263440212301745,-4.325203252032516,4,8,82,exploratory; not automatically adopted
+2,plus_interaction,seasonal_core,높은 소비와 낮은 재고의 결합 효과가 있는가?,11.280100684838322,0.7065295360889898,-2.439024390243894,3,8,82,exploratory; not automatically adopted
+3,history,naive,가격 이력만으로 Naive보다 개선되는가?,15.21832796789787,1.6485348469870758,51.21951219512195,3,8,81,exploratory; not automatically adopted
+3,core_z,history,생산·재고·소비를 개별 입력하면 추가 정보가 있는가?,14.123987493164753,-1.0943404747331176,4.202174551866001,5,8,81,exploratory; not automatically adopted
+3,production_level,core_z,다른 입력을 고정하고 production를 level로 교체하면 개선되는가?,12.608781830004473,-1.5152056631602804,-2.9216867469879517,5,8,81,exploratory; not automatically adopted
+3,production_change,core_z,다른 입력을 고정하고 production를 change로 교체하면 개선되는가?,14.810195659908961,0.6862081667442084,-6.703738029039236,3,8,81,exploratory; not automatically adopted
+3,production_yoy,core_z,다른 입력을 고정하고 production를 yoy로 교체하면 개선되는가?,13.84702665330286,-0.2769608398618928,3.8375725122713007,5,8,81,exploratory; not automatically adopted
+3,production_seasonal_z,core_z,다른 입력을 고정하고 production를 seasonal_z로 교체하면 개선되는가?,15.134083777760171,1.0100962845954182,-7.320420924203141,1,8,81,exploratory; not automatically adopted
+3,without_production,core_z,production를 제거하고 재학습하면 성능이 악화되는가?,14.96901118237339,0.8450236892086362,-9.267840593141798,3,8,81,exploratory; not automatically adopted
+3,storage_level,core_z,다른 입력을 고정하고 storage를 level로 교체하면 개선되는가?,14.947546283061216,0.8235587898964631,-5.421686746987952,1,8,81,exploratory; not automatically adopted
+3,storage_change,core_z,다른 입력을 고정하고 storage를 change로 교체하면 개선되는가?,14.599985294996848,0.4759978018320954,-4.202174551866001,3,8,81,exploratory; not automatically adopted
+3,storage_yoy,core_z,다른 입력을 고정하고 storage를 yoy로 교체하면 개선되는가?,15.322267336858724,1.198279843693971,5.754783841247338,3,8,81,exploratory; not automatically adopted
+3,storage_seasonal_z,core_z,다른 입력을 고정하고 storage를 seasonal_z로 교체하면 개선되는가?,13.306076861969037,-0.8179106311957156,4.819277108433731,6,8,81,exploratory; not automatically adopted
+3,without_storage,core_z,storage를 제거하고 재학습하면 성능이 악화되는가?,15.099389038623242,0.9754015454584888,-7.320420924203141,3,8,81,exploratory; not automatically adopted
+3,consumption_level,core_z,다른 입력을 고정하고 consumption를 level로 교체하면 개선되는가?,15.156774888910796,1.032787395746043,-7.320420924203141,2,8,81,exploratory; not automatically adopted
+3,consumption_change,core_z,다른 입력을 고정하고 consumption를 change로 교체하면 개선되는가?,13.829780462791296,-0.29420703037345675,1.3964950711938613,4,8,81,exploratory; not automatically adopted
+3,consumption_yoy,core_z,다른 입력을 고정하고 consumption를 yoy로 교체하면 개선되는가?,14.635682866497898,0.5116953733331453,-1.9333146539647004,3,8,81,exploratory; not automatically adopted
+3,consumption_seasonal_z,core_z,다른 입력을 고정하고 consumption를 seasonal_z로 교체하면 개선되는가?,14.947224255463764,0.8232367622990111,0.39226674138414097,2,8,81,exploratory; not automatically adopted
+3,without_consumption,core_z,consumption를 제거하고 재학습하면 성능이 악화되는가?,14.537479974787553,0.41349248162280006,-0.6597819850831925,3,8,81,exploratory; not automatically adopted
+3,equal_index,core_z,같은 세 Z특징을 +생산+재고-소비 지수로 압축하면 어떠한가?,15.853406024957739,1.7294185317929855,-8.91005884001121,3,8,81,exploratory; not automatically adopted
+3,signed_core,core_z,"생산·재고 음수, 소비 양수 계수 제약이 예측에 도움이 되는가?",15.099588933165181,0.9756014400004283,-7.320420924203141,3,8,81,exploratory; not automatically adopted
+3,plus_imports,core_z,총수입이 세 수급 변수에 추가 정보를 제공하는가?,14.152417502923415,0.028430009758661612,2.078313253012041,2,8,81,exploratory; not automatically adopted
+3,plus_canada,plus_imports,총수입에 캐나다 수입을 더하면 중복 이상의 가치가 있는가?,13.604013500547566,-0.5484040023758485,5.150602409638552,5,8,81,exploratory; not automatically adopted
+3,plus_rigs_0,core_z,rig count의 추가 시차 0개월이 도움이 되는가?,15.325236635552258,1.2012491423875051,1.0489014883061643,2,8,81,exploratory; not automatically adopted
+3,plus_rigs_3,core_z,rig count의 추가 시차 3개월이 도움이 되는가?,14.807342546543065,0.6833550533783121,-0.6597819850831925,2,8,81,exploratory; not automatically adopted
+3,plus_rigs_6,core_z,rig count의 추가 시차 6개월이 도움이 되는가?,14.446365802466993,0.32237830930223943,-2.2571297849626433,2,8,81,exploratory; not automatically adopted
+3,plus_BCOMNG_INDX,core_z,BCOMNG_INDX 수익률에 수급 이상의 추가 정보가 있는가?,14.024293677962344,-0.09969381520240894,6.483075157773953,4,8,81,exploratory; not automatically adopted
+3,plus_WTI_Crude_Oil,core_z,WTI_Crude_Oil 수익률에 수급 이상의 추가 정보가 있는가?,13.58502642382516,-0.5389610693395923,-0.4216867469879446,5,8,81,exploratory; not automatically adopted
+3,plus_Brent_Crude_Oil,core_z,Brent_Crude_Oil 수익률에 수급 이상의 추가 정보가 있는가?,13.730605129305056,-0.39338236385969694,0.2745157846576163,4,8,81,exploratory; not automatically adopted
+3,plus_BCOMCL_INDX,core_z,BCOMCL_INDX 수익률에 수급 이상의 추가 정보가 있는가?,13.546227500245973,-0.5777599929187804,-4.788775354582896,4,8,81,exploratory; not automatically adopted
+3,plus_DXY_INDX,core_z,DXY_INDX 수익률에 수급 이상의 추가 정보가 있는가?,14.199017667801245,0.07503017463649186,-3.56983489513609,4,8,81,exploratory; not automatically adopted
+3,plus_energy,core_z,시장 수익률을 함께 추가하면 개선되는가?,13.493406754394174,-0.6305807387705791,10.460666194188512,5,8,81,exploratory; not automatically adopted
+3,plus_weather,core_z,계절 대비 기온이 소비 이외의 정보를 제공하는가?,14.825992432663693,0.7020049394989396,-6.703738029039236,1,8,81,exploratory; not automatically adopted
+3,seasonal_core,core_z,세 요소를 모두 계절편차로 표현하면 어떠한가?,13.456057824462716,-0.6679296687020368,-0.24927295388451398,5,8,81,exploratory; not automatically adopted
+3,plus_interaction,seasonal_core,높은 소비와 낮은 재고의 결합 효과가 있는가?,13.881128710351048,0.4250708858883314,0.0,3,8,81,exploratory; not automatically adopted

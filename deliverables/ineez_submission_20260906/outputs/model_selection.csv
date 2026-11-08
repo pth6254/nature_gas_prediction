@@ -1,0 +1,4 @@
+horizon,feature_group,model,validation_mape_pct,validation_mae,direction_accuracy_pct,turning_f1_pct
+1,E3_energy,elastic_net_log_return,6.827213,0.205197,66.265060,67.441860
+2,E3_energy,ridge_log_return,9.461256,0.280198,58.536585,56.410256
+3,E2_fundamentals,ridge_log_return,13.284618,0.405438,61.728395,60.759494

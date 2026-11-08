@@ -1,0 +1,132 @@
+{
+  "runtimeErrors": [],
+  "checks": [
+    {
+      "slide": 1,
+      "issues": [],
+      "overlaps": [],
+      "svgCount": 0
+    },
+    {
+      "slide": 2,
+      "issues": [],
+      "overlaps": [],
+      "svgCount": 1
+    },
+    {
+      "slide": 3,
+      "issues": [],
+      "overlaps": [],
+      "svgCount": 1
+    },
+    {
+      "slide": 4,
+      "issues": [],
+      "overlaps": [],
+      "svgCount": 2
+    },
+    {
+      "slide": 5,
+      "issues": [],
+      "overlaps": [],
+      "svgCount": 0
+    },
+    {
+      "slide": 6,
+      "issues": [],
+      "overlaps": [],
+      "svgCount": 1
+    },
+    {
+      "slide": 7,
+      "issues": [],
+      "overlaps": [],
+      "svgCount": 0
+    },
+    {
+      "slide": 8,
+      "issues": [],
+      "overlaps": [],
+      "svgCount": 1
+    },
+    {
+      "slide": 9,
+      "issues": [],
+      "overlaps": [],
+      "svgCount": 3
+    },
+    {
+      "slide": 10,
+      "issues": [],
+      "overlaps": [],
+      "svgCount": 1
+    }
+  ],
+  "interactions": {
+    "next": true,
+    "prev": true,
+    "opened": true,
+    "closed": true,
+    "end": true,
+    "home": true
+  },
+  "mobile": {
+    "overflow": false,
+    "stageWidth": 390
+  },
+  "print": {
+    "visible": 10,
+    "dimensions": [
+      {
+        "width": 1536,
+        "height": 864,
+        "footerFits": true
+      },
+      {
+        "width": 1536,
+        "height": 864,
+        "footerFits": true
+      },
+      {
+        "width": 1536,
+        "height": 864,
+        "footerFits": true
+      },
+      {
+        "width": 1536,
+        "height": 864,
+        "footerFits": true
+      },
+      {
+        "width": 1536,
+        "height": 864,
+        "footerFits": true
+      },
+      {
+        "width": 1536,
+        "height": 864,
+        "footerFits": true
+      },
+      {
+        "width": 1536,
+        "height": 864,
+        "footerFits": true
+      },
+      {
+        "width": 1536,
+        "height": 864,
+        "footerFits": true
+      },
+      {
+        "width": 1536,
+        "height": 864,
+        "footerFits": true
+      },
+      {
+        "width": 1536,
+        "height": 864,
+        "footerFits": true
+      }
+    ]
+  }
+}

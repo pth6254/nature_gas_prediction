@@ -1,0 +1,36 @@
+{
+  "isolated_existing_environment": true,
+  "fresh_dependency_install_tested": false,
+  "core_source_byte_identical": true,
+  "regenerated_submission_byte_identical": true,
+  "original_submission_unchanged": true,
+  "historical_experiments_fully_rerun": false,
+  "commands": [
+    {
+      "command": "python -m pytest -q -p no:cacheprovider",
+      "exit_code": 0,
+      "stdout": "............................................................             [100%]\n60 passed in 11.23s\n",
+      "stderr": ""
+    },
+    {
+      "command": "python -m src.final_pipeline",
+      "exit_code": 0,
+      "stdout": "Final raw input missing counts: {'Natural_Gas_US_Henry_Hub_Gas': 0, 'Total_Natural_Gas_Marketed_Production_USA': 2, 'Total_Natural_Gas_Underground_Storage_Volume_USA': 2, 'Natural_Gas_Total_Consumption_USA': 2, 'BCOMNG_INDX': 0}\nCompleted origin 120\nCompleted origin 144\nCompleted origin 168\nCompleted origin 192\nCompleted origin 216\nCompleted origin 240\n horizon      family period  mape_pct      mae  direction_accuracy_pct  n_origins  turning_precision_pct  turning_recall_pct  turning_f1_pct  actual_turning_points  predicted_turning_points\n       1 elastic_net    all  6.314109 0.190511               65.060241         83              71.794872           60.869565       65.882353                     46                        39\n       2       ridge    all  9.212488 0.275640               63.414634         82              62.500000           52.631579       57.142857                     38                        32\n       3       ridge    all 11.722621 0.347899               65.432099         81              67.647059           57.500000       62.162162                     40                        34\nPublished submission.csv; prior submission preserved at outputs_final_v1\\previous_submission.csv\n",
+      "stderr": ""
+    },
+    {
+      "command": "python -m src.final_report",
+      "exit_code": 0,
+      "stdout": "Verified submission, temporal selection, centered explanations and final report\n",
+      "stderr": ""
+    },
+    {
+      "command": "python presentation/build_deck.py",
+      "exit_code": 0,
+      "stdout": "Built C:\\Users\\Public\\Documents\\ESTsoft\\CreatorTemp\\nature_gas_submission_verify_fzuld39d\\package\\presentation\\REPORT_SLIDES.html; 67,118 bytes; evidence and submission integrity checked.\n",
+      "stderr": ""
+    }
+  ],
+  "local_report_links_checked": 71,
+  "slide_source_hashes_match_package": true
+}

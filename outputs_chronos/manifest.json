@@ -1,0 +1,38 @@
+{
+  "model": "amazon/chronos-bolt-small",
+  "revision": "772f3d25d38aec6d914c8949dab4462e2d46f5d8",
+  "train_sha256": "d541fdc9c2aae158aba3cc33edbcb1390e04b8ee8db32e9829a51c9422e21a3b",
+  "implementation_sha256": "9a781bcbb1fbdc2e67e4de820596500845c08215c790a01142e9c2c5abf1b253",
+  "artifacts_sha256": {
+    "config.json": "9ca0ebbe049ccebacb0546361e8aa728f0cf104cd18d1838d78d296aa317bd21",
+    "model.safetensors": "06a6a19bbe74bc10a9cd193bd4bf2bf638ae07f7e0d51653ae7ab8ea968a21dd",
+    "README.md": "e7a41f030a7250d67a01200512dd9fb8619d3c708f9e68ef18bc620521979219"
+  },
+  "versions": {
+    "torch": "2.11.0+cu128",
+    "chronos-forecasting": "2.3.1",
+    "transformers": "5.16.1",
+    "huggingface-hub": "1.30.0"
+  },
+  "device": "cuda:0",
+  "gpu": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+  "cuda": "12.8",
+  "dtype": "float32",
+  "batch_size": 16,
+  "lookback": 24,
+  "origins": [
+    120,
+    202
+  ],
+  "horizons": [
+    1,
+    2,
+    3
+  ],
+  "inputs": "raw price only; internal per-context normalization; no external scaler or covariates",
+  "point_forecast": "0.5 quantile (median), NOT an ensemble weight or MAPE-tuned quantile",
+  "training": "none: frozen pretrained weights, no fine-tuning or validation selection",
+  "seed": 42,
+  "contamination_status": "unverified: public Henry Hub history may overlap pretraining; checkpoint released after evaluation period",
+  "role": "retrospective exploratory comparison; NOT proven contamination-free historical forecast"
+}

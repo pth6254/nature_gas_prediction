@@ -1,0 +1,53 @@
+{
+  "model": "amazon/chronos-2",
+  "revision": "29ec3766d36d6f73f0696f85560a422f50e8498c",
+  "train_sha256": "d541fdc9c2aae158aba3cc33edbcb1390e04b8ee8db32e9829a51c9422e21a3b",
+  "code_sha256": {
+    "src/chronos_covariates.py": "f502ad7e10db381723c2d8f99d932c16570a340d53fb1ccfe7fc5558d80d0224",
+    "src/hypotheses.py": "7f49a29a32a5a51f91cf5950ae47b54e18c8e9fccffee843f245d22f2a643d2b",
+    "src/features.py": "9171ee3ba24bd888a9fdd9964413b2ee7679469bc3b9a72a2916d2cc70fcbb44",
+    "src/evaluate.py": "c8ac1ad06545bb832429cebcc5f9d4db389a4d739bb76fa17b7f177912794bcd"
+  },
+  "weights_sha256": {
+    "config.json": "ef1143bfdc9c0376d9a056eefca46cb4b1ec3d0ffacd541ff56feb40fb708031",
+    "model.safetensors": "ddcda3c7508bf2528087723e98a20707cc04b7f370ae275a9fd88078ddba4f42",
+    "README.md": "c7b29bc88f5bc3ebc6e7213b6353be80090d671fefa4aa74ed20498838c16558"
+  },
+  "versions": {
+    "torch": "2.11.0+cu128",
+    "chronos-forecasting": "2.3.1",
+    "transformers": "5.16.1",
+    "numpy": "2.4.6",
+    "pandas": "2.3.3"
+  },
+  "gpu": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+  "device": "cuda:0",
+  "dtype": "float32",
+  "seed": 42,
+  "lookback": 24,
+  "groups": {
+    "price": [],
+    "fundamentals": [
+      "production_level",
+      "storage_seasonal_z",
+      "consumption_z"
+    ],
+    "market": [
+      "production_level",
+      "storage_seasonal_z",
+      "consumption_z",
+      "BCOMNG_INDX_return"
+    ]
+  },
+  "prediction_length": 3,
+  "quantile": 0.5,
+  "first_origin": 120,
+  "last_origin": 202,
+  "inference": "one origin per call, cross_learning=False, frozen zero-shot, no tuning",
+  "past_covariates_only": true,
+  "future_covariates": "not supplied",
+  "availability": "production/consumption lag2; storage lag1; market lag0; causal features reused from ML/DL",
+  "normalization": "model internal per-context normalization; precomputed causal Z features shared with ML/DL; no global imputer",
+  "external_economic_data": "none: existing data already contains all required aligned inputs; downloaded only model weights",
+  "limitations": "Chronos-2 differs from Bolt; compare input ablations WITHIN Chronos-2. Public historical evaluation may overlap pretraining; not certified uncontaminated OOS. Existing ML references differ in training, target transform, and history representation."
+}

@@ -1,0 +1,59 @@
+﻿feature,raw_columns,formula,release_lag_months,implementation
+price_now,Natural_Gas_US_Henry_Hub_Gas,price_now,0,src/features.py:make_feature_matrix
+price_lag_1,Natural_Gas_US_Henry_Hub_Gas,price_lag_1,0,src/features.py:make_feature_matrix
+price_lag_2,Natural_Gas_US_Henry_Hub_Gas,price_lag_2,0,src/features.py:make_feature_matrix
+price_lag_3,Natural_Gas_US_Henry_Hub_Gas,price_lag_3,0,src/features.py:make_feature_matrix
+price_lag_6,Natural_Gas_US_Henry_Hub_Gas,price_lag_6,0,src/features.py:make_feature_matrix
+price_lag_12,Natural_Gas_US_Henry_Hub_Gas,price_lag_12,0,src/features.py:make_feature_matrix
+price_log_return_1,Natural_Gas_US_Henry_Hub_Gas,price_log_return_1,0,src/features.py:make_feature_matrix
+price_log_return_3,Natural_Gas_US_Henry_Hub_Gas,price_log_return_3,0,src/features.py:make_feature_matrix
+price_log_return_6,Natural_Gas_US_Henry_Hub_Gas,price_log_return_6,0,src/features.py:make_feature_matrix
+price_log_return_12,Natural_Gas_US_Henry_Hub_Gas,price_log_return_12,0,src/features.py:make_feature_matrix
+price_roll_mean_3,Natural_Gas_US_Henry_Hub_Gas,price_roll_mean_3,0,src/features.py:make_feature_matrix
+price_roll_std_3,Natural_Gas_US_Henry_Hub_Gas,price_roll_std_3,0,src/features.py:make_feature_matrix
+price_roll_mean_6,Natural_Gas_US_Henry_Hub_Gas,price_roll_mean_6,0,src/features.py:make_feature_matrix
+price_roll_std_6,Natural_Gas_US_Henry_Hub_Gas,price_roll_std_6,0,src/features.py:make_feature_matrix
+price_roll_mean_12,Natural_Gas_US_Henry_Hub_Gas,price_roll_mean_12,0,src/features.py:make_feature_matrix
+price_roll_std_12,Natural_Gas_US_Henry_Hub_Gas,price_roll_std_12,0,src/features.py:make_feature_matrix
+month_sin,date,month_sin,0,src/features.py:make_feature_matrix
+month_cos,date,month_cos,0,src/features.py:make_feature_matrix
+production_level,Total_Natural_Gas_Marketed_Production_USA,x; then shift(release_lag).ffill(),2,src/hypotheses.py
+production_change,Total_Natural_Gas_Marketed_Production_USA,x - x.shift(1); then shift(release_lag).ffill(),2,src/hypotheses.py
+production_yoy,Total_Natural_Gas_Marketed_Production_USA,x / x.shift(12) - 1; then shift(release_lag).ffill(),2,src/hypotheses.py
+production_z,Total_Natural_Gas_Marketed_Production_USA,"(x - expanding_mean(x)) / expanding_std(x), min_n=12; then shift(release_lag).ffill()",2,src/hypotheses.py
+production_seasonal_z,Total_Natural_Gas_Marketed_Production_USA,"(x - prior_same_month_mean) / prior_same_month_std, min_n=3; then shift(release_lag).ffill()",2,src/hypotheses.py
+imports_level,Natural_Gas_Imports_USA,x; then shift(release_lag).ffill(),2,src/hypotheses.py
+imports_change,Natural_Gas_Imports_USA,x - x.shift(1); then shift(release_lag).ffill(),2,src/hypotheses.py
+imports_yoy,Natural_Gas_Imports_USA,x / x.shift(12) - 1; then shift(release_lag).ffill(),2,src/hypotheses.py
+imports_z,Natural_Gas_Imports_USA,"(x - expanding_mean(x)) / expanding_std(x), min_n=12; then shift(release_lag).ffill()",2,src/hypotheses.py
+imports_seasonal_z,Natural_Gas_Imports_USA,"(x - prior_same_month_mean) / prior_same_month_std, min_n=3; then shift(release_lag).ffill()",2,src/hypotheses.py
+canada_imports_level,Natural_Gas_Imports_From_Canada_USA,x; then shift(release_lag).ffill(),2,src/hypotheses.py
+canada_imports_change,Natural_Gas_Imports_From_Canada_USA,x - x.shift(1); then shift(release_lag).ffill(),2,src/hypotheses.py
+canada_imports_yoy,Natural_Gas_Imports_From_Canada_USA,x / x.shift(12) - 1; then shift(release_lag).ffill(),2,src/hypotheses.py
+canada_imports_z,Natural_Gas_Imports_From_Canada_USA,"(x - expanding_mean(x)) / expanding_std(x), min_n=12; then shift(release_lag).ffill()",2,src/hypotheses.py
+canada_imports_seasonal_z,Natural_Gas_Imports_From_Canada_USA,"(x - prior_same_month_mean) / prior_same_month_std, min_n=3; then shift(release_lag).ffill()",2,src/hypotheses.py
+rigs_level,Natural_Gas_Rotary_Rig_Count_USA,x; then shift(release_lag).ffill(),0,src/hypotheses.py
+rigs_change,Natural_Gas_Rotary_Rig_Count_USA,x - x.shift(1); then shift(release_lag).ffill(),0,src/hypotheses.py
+rigs_yoy,Natural_Gas_Rotary_Rig_Count_USA,x / x.shift(12) - 1; then shift(release_lag).ffill(),0,src/hypotheses.py
+rigs_z,Natural_Gas_Rotary_Rig_Count_USA,"(x - expanding_mean(x)) / expanding_std(x), min_n=12; then shift(release_lag).ffill()",0,src/hypotheses.py
+rigs_seasonal_z,Natural_Gas_Rotary_Rig_Count_USA,"(x - prior_same_month_mean) / prior_same_month_std, min_n=3; then shift(release_lag).ffill()",0,src/hypotheses.py
+consumption_level,Natural_Gas_Total_Consumption_USA,x; then shift(release_lag).ffill(),2,src/hypotheses.py
+consumption_change,Natural_Gas_Total_Consumption_USA,x - x.shift(1); then shift(release_lag).ffill(),2,src/hypotheses.py
+consumption_yoy,Natural_Gas_Total_Consumption_USA,x / x.shift(12) - 1; then shift(release_lag).ffill(),2,src/hypotheses.py
+consumption_z,Natural_Gas_Total_Consumption_USA,"(x - expanding_mean(x)) / expanding_std(x), min_n=12; then shift(release_lag).ffill()",2,src/hypotheses.py
+consumption_seasonal_z,Natural_Gas_Total_Consumption_USA,"(x - prior_same_month_mean) / prior_same_month_std, min_n=3; then shift(release_lag).ffill()",2,src/hypotheses.py
+storage_level,Total_Natural_Gas_Underground_Storage_Volume_USA,x; then shift(release_lag).ffill(),1,src/hypotheses.py
+storage_change,Total_Natural_Gas_Underground_Storage_Volume_USA,x - x.shift(1); then shift(release_lag).ffill(),1,src/hypotheses.py
+storage_yoy,Total_Natural_Gas_Underground_Storage_Volume_USA,x / x.shift(12) - 1; then shift(release_lag).ffill(),1,src/hypotheses.py
+storage_z,Total_Natural_Gas_Underground_Storage_Volume_USA,"(x - expanding_mean(x)) / expanding_std(x), min_n=12; then shift(release_lag).ffill()",1,src/hypotheses.py
+storage_seasonal_z,Total_Natural_Gas_Underground_Storage_Volume_USA,"(x - prior_same_month_mean) / prior_same_month_std, min_n=3; then shift(release_lag).ffill()",1,src/hypotheses.py
+rigs_z_lag3,Natural_Gas_Rotary_Rig_Count_USA,rigs_z.shift(3) after release alignment,3,src/hypotheses.py
+rigs_z_lag6,Natural_Gas_Rotary_Rig_Count_USA,rigs_z.shift(6) after release alignment,6,src/hypotheses.py
+BCOMNG_INDX_return,BCOMNG_INDX,x / x.shift(1) - 1; ffill,0,src/hypotheses.py
+WTI_Crude_Oil_return,WTI_Crude_Oil,x / x.shift(1) - 1; ffill,0,src/hypotheses.py
+Brent_Crude_Oil_return,Brent_Crude_Oil,x / x.shift(1) - 1; ffill,0,src/hypotheses.py
+BCOMCL_INDX_return,BCOMCL_INDX,x / x.shift(1) - 1; ffill,0,src/hypotheses.py
+DXY_INDX_return,DXY_INDX,x / x.shift(1) - 1; ffill,0,src/hypotheses.py
+temperature_seasonal_z,high_temperature;low_temperature,"mean(high,low); prior_same_month_z(min_n=3); release shift; ffill",1,src/hypotheses.py
+balance_equal,Total_Natural_Gas_Marketed_Production_USA;Total_Natural_Gas_Underground_Storage_Volume_USA;Natural_Gas_Total_Consumption_USA,production_z + storage_z - consumption_z; no imports or rigs,component-specific,src/hypotheses.py
+demand_storage_interaction,Natural_Gas_Total_Consumption_USA;Total_Natural_Gas_Underground_Storage_Volume_USA,"max(consumption_seasonal_z,0) * max(-storage_seasonal_z,0)",component-specific,src/hypotheses.py

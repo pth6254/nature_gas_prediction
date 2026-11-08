@@ -1,0 +1,71 @@
+{
+  "config": {
+    "version": "final_v1",
+    "models": {
+      "1": "elastic_net",
+      "2": "ridge",
+      "3": "ridge"
+    },
+    "ridge_alpha": 10.0,
+    "elastic_net_alpha": 0.01,
+    "elastic_net_l1_ratio": 0.2,
+    "h1_reaction_lags": [
+      0,
+      1,
+      3,
+      6
+    ],
+    "selection_window": 36,
+    "selection_min_origins": 24,
+    "first_inner_origin": 72,
+    "first_validation_origin": 120,
+    "release_lags": {
+      "production": 2,
+      "storage": 2,
+      "consumption": 2,
+      "market": 0
+    },
+    "raw_inputs": {
+      "production": "Total_Natural_Gas_Marketed_Production_USA",
+      "storage": "Total_Natural_Gas_Underground_Storage_Volume_USA",
+      "consumption": "Natural_Gas_Total_Consumption_USA",
+      "market": "BCOMNG_INDX"
+    },
+    "price_target": "Natural_Gas_US_Henry_Hub_Gas",
+    "target": "log(P[t+h]/P[t]); prediction=max(.01,P[t]*exp(model_output)); no blend",
+    "deployment": "monthly expanding refit; observed current test price usable only at/after its own origin",
+    "limitations": "retrospective inspected validation, not untouched holdout; historical release calendar and vintage incompletely verified; monthly forecast after releases at month end"
+  },
+  "input_hashes": {
+    "train": "d541fdc9c2aae158aba3cc33edbcb1390e04b8ee8db32e9829a51c9422e21a3b",
+    "test": "9bd69ededc51b104c17ade7cfd6a816e69cc849fdd710c2902f08aedecc5a8e4",
+    "template": "515c1ac0eb6058ae591006993ac73acbe0b01e748eb9323b1148d404e05c3358"
+  },
+  "code_hashes": {
+    "src/final_pipeline.py": "8ab9a1d0ccea23b484e7a91f61969db1d6962444c346afe20f5edcd1cb6e1590",
+    "src/features.py": "9171ee3ba24bd888a9fdd9964413b2ee7679469bc3b9a72a2916d2cc70fcbb44",
+    "src/combination_experiment.py": "172a719cfe5cc0c50489732d163f67b916485d6203db93fa88f12bc32fbe91a5",
+    "src/evaluate.py": "c8ac1ad06545bb832429cebcc5f9d4db389a4d739bb76fa17b7f177912794bcd"
+  },
+  "versions": {
+    "numpy": "2.4.6",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.9.0"
+  },
+  "submission_sha256": "cdb098a1da8f00e5818162fe47c6f1a00342382267a6eb01400866b2b2ce2bba",
+  "backup_path": "outputs_final_v1\\previous_submission.csv",
+  "backup_sha256": "7e6277de4bea329162c1913c228c02c288b294d142e6518cce16c1f3ef339e16",
+  "validation_replay_max_allowed_delta": 1e-09,
+  "validation_matches_previous_experiment": true,
+  "test_rows": 48,
+  "forecast_count": 144,
+  "missing_raw_inputs": {
+    "Natural_Gas_US_Henry_Hub_Gas": 0,
+    "Total_Natural_Gas_Marketed_Production_USA": 2,
+    "Total_Natural_Gas_Underground_Storage_Volume_USA": 2,
+    "Natural_Gas_Total_Consumption_USA": 2,
+    "BCOMNG_INDX": 0
+  },
+  "test_performance_used_for_final_model_selection": false,
+  "explanation": "centered linear contributions in log-return space; base plus contributions equals model output; not causal effects"
+}

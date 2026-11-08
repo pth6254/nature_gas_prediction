@@ -1,0 +1,13 @@
+{
+  "url": "https://www.eia.gov/dnav/ng/hist/n5030us2m.htm",
+  "retrieved_utc": "2026-09-06T06:27:54.631459+00:00",
+  "sha256": "9014ce9bd967c09a87cf912cb284bfca84376a0ce1b6a43cca7bb29741fa6cbc",
+  "train_sha256": "d541fdc9c2aae158aba3cc33edbcb1390e04b8ee8db32e9829a51c9422e21a3b",
+  "compared_months": 204,
+  "exact_matches": 24,
+  "within5_mmcf": 204,
+  "nearest10_matches": 204,
+  "max_absolute_difference_mmcf": 5,
+  "interpretation": "Value alignment supports series identification, not original provider lineage or historical vintage identity.",
+  "release_policy": "Use monthly storage lag2 for new experiments; historical complete release calendar/vintage still unverified; do not infer availability from MAPE."
+}
